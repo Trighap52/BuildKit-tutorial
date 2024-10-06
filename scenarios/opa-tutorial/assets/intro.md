@@ -1,23 +1,21 @@
 ## Introduction
 
-In modern DevOps workflows, policies play a crucial role in ensuring that systems remain secure, compliant, and efficient. As organizations scale, enforcing policies consistently across various components like **microservices**, **Kubernetes**, and **CI/CD pipelines** becomes increasingly important.
+In Kubernetes, managing and enforcing policies across clusters is crucial for maintaining security, compliance, and operational consistency. Manual enforcement of these policies can be error-prone and hard to scale. This is where **Open Policy Agent (OPA) Gatekeeper** comes into play.
 
-**Open Policy Agent (OPA)** is a powerful, general-purpose policy engine that helps decouple policy enforcement from the application logic. By integrating OPA, DevOps teams can ensure that security, compliance, and operational policies are enforced across the entire system.
+OPA Gatekeeper provides a Kubernetes-native way to enforce custom policies declaratively. By using **Constraint Templates** and **Constraints**, you can define fine-grained policies to control what resources are allowed in your cluster, ensuring that security and operational policies are consistently enforced without manual intervention.
 
 ---
 
 ## Motivation
 
-Policies are crucial for maintaining governance, security, and compliance across cloud-native environments. With distributed architectures, ensuring that policies are consistently applied to all parts of the system, from Kubernetes clusters to CI/CD pipelines, can be challenging. OPA offers a centralized, scalable solution for managing these policies.
+As Kubernetes environments scale, ensuring consistent policy enforcement across clusters becomes challenging. OPA Gatekeeper solves this problem by automating the enforcement of security and compliance policies, reducing human error and allowing for consistent, scalable governance.
 
 ---
 
 ## Learning Outcomes
 
-In this tutorial, you will learn how to:
-
-1. **Enforce policies** on Kubernetes clusters to control what gets deployed.
-2. **Secure microservices** by managing access and permissions using OPA.
-3. **Integrate OPA into CI/CD pipelines** to ensure policies are checked before deployments.
-
-By the end of this tutorial, you’ll be able to leverage OPA to ensure that your cloud-native infrastructure and applications adhere to critical security and compliance requirements.
+By the end of this tutorial, you will be able to:
+1. Install and configure **OPA Gatekeeper** on a Kubernetes cluster.
+2. Define a **Constraint Template** and create policies using the **Rego** policy language.
+3. Apply policies to Kubernetes resources using **Constraints**.
+4. Test and validate policy enforcement on container images within Kubernetes.

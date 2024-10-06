@@ -1,11 +1,36 @@
-# Key Features of BuildKit
+Now, let’s create a **Constraint** that applies the rule we defined in the template to all pods running in the cluster.
 
-Before moving on, let’s quickly recap what makes BuildKit different:
-- **Build performance**: BuildKit optimizes the building process by enabling parallelism, improved caching, and more efficient layering.
-- **Security**: One of BuildKit's standout features is the ability to pass secrets securely during the build without leaving them in the final image.
-- **Multi-stage builds**: BuildKit enhances support for multi-stage builds, allowing for smaller, more optimized Docker images.
+1. **Create another file** called `constraint.yaml`:
 
-With this knowledge, you are ready to proceed to the hands-on sections, where we’ll explore how to leverage these features.
+   ```bash
+   nano constraint.yaml
+   ```
 
-Click **Next** to proceed with enabling BuildKit and optimizing your Docker builds!
-```
+2. **Paste the following content**:
+
+   ```yaml
+  apiVersion: constraints.gatekeeper.sh/v1beta1
+  kind: AllowedImageRegistry # This must match the kind from the template
+  metadata:
+    name: allowed-image-registry
+  spec:
+    match:
+      kinds:
+        - apiGroups: [""]
+          kinds: ["Pod"]
+   ```
+
+This configuration will ensure that the policy created in the **ConstraintTemplate** is applied to all Pods in the cluster, ensuring they use images from the allowed registry. Here's a little breakdown of the code : 
+
+1. **`apiVersion`**: The version of the Gatekeeper constraint resource.
+2. **`kind`**: This must match the `kind` defined in the **ConstraintTemplate** (`AllowedImageRegistry`).
+3. **`metadata.name`**: The name of this specific constraint. This is what will identify this particular policy rule in the cluster.
+4. **`spec.match`**: Defines the types of Kubernetes resources to which the policy applies.
+   - **`apiGroups`**: An empty string refers to core resources like Pods.
+   - **`kinds`**: Specifies that this constraint will apply only to Pods.
+
+3. **Apply the constraint**:
+
+   ```bash
+   kubectl apply -f constraint.yaml
+   ```

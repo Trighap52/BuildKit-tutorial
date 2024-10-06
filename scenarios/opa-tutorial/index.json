@@ -1,21 +1,25 @@
 {
-  "title": "Enforce Policies Across Microservices, Kubernetes, and CI/CD Pipelines Using OPA",
+  "title": "Setting Up OPA for Kubernetes Policy Enforcement",
   "details": {
     "intro": {
       "text": "assets/intro.md"
     },
     "steps": [
       {
-        "title": "Setting Up OPA for Kubernetes Policy Enforcement",
+        "title": "Install OPA Gatekeeper",
         "text": "assets/step1.md"
       },
       {
-        "title": "Enforce Policies in Microservices Using OPA",
+        "title": "Create a Policy Template",
         "text": "assets/step2.md"
       },
       {
-        "title": "Key Features of BuildKit",
+        "title": "Create a Policy Constraint",
         "text": "assets/step3.md"
+      },
+      {
+        "title": "Test the Policy",
+        "text": "assets/step4.md"
       }
     ],
     "finish": {
