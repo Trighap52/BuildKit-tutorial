@@ -9,26 +9,26 @@ Gatekeeper uses **Constraint Templates** to define reusable policies. Let’s cr
 2. **Paste the following content** into the file:
 
    ```yaml
-  apiVersion: templates.gatekeeper.sh/v1beta1
-  kind: ConstraintTemplate
-  metadata:
-    name: allowedimageregistry
-  spec:
-    crd:
-      spec:
-        names:
-          kind: AllowedImageRegistry # This name must match in your Constraint file
-    targets:
-      - target: admission.k8s.gatekeeper.sh
-        rego: |
-          package allowedimageregistry
+    apiVersion: templates.gatekeeper.sh/v1beta1
+    kind: ConstraintTemplate
+    metadata:
+      name: allowedimageregistry
+    spec:
+      crd:
+        spec:
+          names:
+            kind: AllowedImageRegistry # This name must match in your Constraint file
+      targets:
+        - target: admission.k8s.gatekeeper.sh
+          rego: |
+            package allowedimageregistry
 
-          # Deny the request if the image is not from the allowed registry
-          violation[{"msg": msg}] {
-            image := input.review.object.spec.containers[_].image
-            not startswith(image, "myregistry.com/")
-            msg := "Only images from 'myregistry.com' are allowed."
-          }
+            # Deny the request if the image is not from the allowed registry
+            violation[{"msg": msg}] {
+              image := input.review.object.spec.containers[_].image
+              not startswith(image, "myregistry.com/")
+              msg := "Only images from 'myregistry.com' are allowed."
+            }
    ```
 This code defines our policy in Rego Language. Here's a little explanation of the diffrent parts: 
 
