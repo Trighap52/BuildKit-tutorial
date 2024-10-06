@@ -1,5 +1,5 @@
 {
-  "title": "BuildKit for Faster and More Secure Docker Builds",
+  "title": "Enforce Policies Across Microservices, Kubernetes, and CI/CD Pipelines Using OPA",
   "details": {
     "intro": {
       "text": "assets/intro.md"
