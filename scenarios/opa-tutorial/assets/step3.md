@@ -12,11 +12,11 @@ Now, let’s create a **Constraint** that applies the rule we defined in the tem
     apiVersion: constraints.gatekeeper.sh/v1beta1
     kind: AllowedImageRegistry # This must match the kind from the template
     metadata:
-    name: allowed-image-registry
+      name: allowed-image-registry
     spec:
-    match:
+      match:
         kinds:
-        - apiGroups: [""]
+          - apiGroups: [""]
             kinds: ["Pod"]
     ```
 
