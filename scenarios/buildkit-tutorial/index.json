@@ -23,8 +23,8 @@
         "text": "assets/step4.md"
       }
     ],
-    "imageid": "docker:20.10",
+    "imageid": "ubuntu:20.04",
     "backend": {
-      "imageid": "docker:20.10" 
+      "imageid": "ubuntu:20.04"
     }
   }
