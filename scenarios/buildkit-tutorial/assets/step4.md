@@ -1,13 +1,34 @@
 # Running your first BuildKit Build
-## Create a Simple Dockerfile**
 
-Now that BuildKit is enabled, let’s create a simple Dockerfile to test the build process. Open a terminal and create a new file called `Dockerfile`:
+## **Step 1: Clone the Node.js Examples Repository**
+
+Instead of creating a new file from scratch, we'll clone an existing repository from **GitHub** that contains example Node.js applications.
+
+In your terminal, run the following command to clone the repository:
+
+```bash
+git clone https://github.com/nodejs/examples.git
+```
+
+This will create a folder called **`examples`** containing various example Node.js applications.
+
+## **Step 2: Navigate to the Desired Example**
+
+For this tutorial, let's navigate to the **`examples/express`** directory, which contains a simple Express.js application.
+
+```bash
+cd examples/express
+```
+
+## **Step 3: Create a Dockerfile**
+
+Now that you're in the **`express`** folder, create a Dockerfile for this application:
 
 ```bash
 nano Dockerfile
 ```
 
-Inside the file, paste the following simple content:
+Inside the file, paste the following Dockerfile content:
 
 ```dockerfile
 # Use an official Node.js runtime as a parent image
@@ -23,8 +44,8 @@ RUN npm install
 # Copy the rest of the application’s source code
 COPY . .
 
-# Expose port 8080
-EXPOSE 8080
+# Expose port 3000
+EXPOSE 3000
 
 # Command to run the app
 CMD ["node", "index.js"]
@@ -34,11 +55,11 @@ This Dockerfile will:
 - Use the Node.js 14 runtime.
 - Set the working directory in the container.
 - Copy the necessary files and install dependencies.
-- Expose port 8080 and run the application.
+- Expose port 3000 and run the application.
 
-## Build the Docker Image with BuildKit**
+## **Step 4: Build the Docker Image with BuildKit**
 
-Now, let’s build the Docker image using BuildKit. In your terminal, run the following command to build the image:
+Now, let’s build the Docker image using BuildKit. Make sure BuildKit is enabled, and run the following command to build the image:
 
 ```bash
 docker build -t myapp .
@@ -46,7 +67,7 @@ docker build -t myapp .
 
 When you run this build command, BuildKit will kick in, using its enhanced caching and parallel processing capabilities.
 
-## Observe BuildKit in Action**
+## **Step 5: Observe BuildKit in Action**
 
 Once the build starts, you'll notice a few differences compared to the traditional Docker build system:
 - **Parallel Processing**: BuildKit executes independent layers in parallel, speeding up the build process.
@@ -54,19 +75,19 @@ Once the build starts, you'll notice a few differences compared to the tradition
 
 You should see output indicating that BuildKit is in use (e.g., `[+] Building 12.3s`).
 
-## Run the Built Image**
+## **Step 6: Run the Built Image**
 
 Once the build completes, you can run the Docker image to test that everything works correctly:
 
 ```bash
-docker run -p 8080:8080 myapp
+docker run -p 3000:3000 myapp
 ```
 
-This command will start your Node.js application inside a container and expose it on port 8080.
+This command will start your Node.js application inside a container and expose it on port 3000.
 
-You can open your browser and go to `http://localhost:8080` to see the app running.
+You can open your browser and go to `http://localhost:3000` to see the app running.
 
-## Analysis of Build Performance**
+## **Step 7: Analysis of Build Performance**
 
 Now that you’ve completed the build with BuildKit, let's analyze its performance by comparing the build time to a traditional Docker build.
 
