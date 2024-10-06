@@ -7,11 +7,11 @@
         "text": "assets/intro.md"
       },
       {
-        "title": "Enable BuildKit",
+        "title": "Prerequisites",
         "text": "assets/step1.md"
       },
       {
-        "title": "Using Multi-Stage Builds",
+        "title": "Enabling BuildKit",
         "text": "assets/step2.md"
       }
     ]
