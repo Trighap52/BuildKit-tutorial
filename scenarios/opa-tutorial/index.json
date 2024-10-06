@@ -1,0 +1,35 @@
+{
+  "title": "BuildKit for Faster and More Secure Docker Builds",
+  "details": {
+    "intro": {
+      "text": "assets/intro.md"
+    },
+    "steps": [
+      {
+        "title": "Prerequisites",
+        "text": "assets/step1.md"
+      },
+      {
+        "title": "Enabling BuildKit",
+        "text": "assets/step2.md"
+      },
+      {
+        "title": "Key Features of BuildKit",
+        "text": "assets/step3.md"
+      },
+      {
+        "title": "Running your first BuildKit build",
+        "text": "assets/step4.md"
+      }
+    ],
+    "finish": {
+      "text": "assets/finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  },
+  "interface": {
+    "layout": "ide"
+  }
+}
