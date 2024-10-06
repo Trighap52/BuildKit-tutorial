@@ -8,7 +8,7 @@
       {
         "title": "Install OPA Gatekeeper",
         "text": "assets/step1.md",
-        "verify": "verify1.sh"
+        "verify": "assets/verify1.sh"
       },
       {
         "title": "Create a Policy Template",
