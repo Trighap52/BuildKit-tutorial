@@ -1,5 +1,3 @@
-# Enforce Policies Across Microservices, Kubernetes, and CI/CD Pipelines Using OPA
-
 ## Introduction
 
 In modern DevOps workflows, policies play a crucial role in ensuring that systems remain secure, compliant, and efficient. As organizations scale, enforcing policies consistently across various components like **microservices**, **Kubernetes**, and **CI/CD pipelines** becomes increasingly important.

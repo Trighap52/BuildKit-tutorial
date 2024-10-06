@@ -6,20 +6,16 @@
     },
     "steps": [
       {
-        "title": "Prerequisites",
+        "title": "Setting Up OPA for Kubernetes Policy Enforcement",
         "text": "assets/step1.md"
       },
       {
-        "title": "Enabling BuildKit",
+        "title": "Enforce Policies in Microservices Using OPA",
         "text": "assets/step2.md"
       },
       {
         "title": "Key Features of BuildKit",
         "text": "assets/step3.md"
-      },
-      {
-        "title": "Running your first BuildKit build",
-        "text": "assets/step4.md"
       }
     ],
     "finish": {
