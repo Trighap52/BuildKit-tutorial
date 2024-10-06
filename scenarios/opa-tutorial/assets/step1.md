@@ -15,4 +15,4 @@ To install OPA Gatekeeper, follow these steps:
    kubectl get pods -n gatekeeper-system
    ```
 
-   You should see pods like `gatekeeper-controller-manager` running. If they are all up and running, Gatekeeper is ready.
+   You should see pods like `gatekeeper-controller-manager` running (it may take a few seconds). If they are all up and running, Gatekeeper is ready.
