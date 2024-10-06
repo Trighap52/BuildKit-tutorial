@@ -8,17 +8,17 @@ Now, let’s create a **Constraint** that applies the rule we defined in the tem
 
 2. **Paste the following content**:
 
-   ```yaml
-    apiVersion: constraints.gatekeeper.sh/v1beta1
-    kind: AllowedImageRegistry # This must match the kind from the template
-    metadata:
-        name: allowed-image-registry
-    spec:
-        match:
-        kinds:
-            - apiGroups: [""]
-            kinds: ["Pod"]
-   ```
+```yaml
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: AllowedImageRegistry # This must match the kind from the template
+metadata:
+  name: allowed-image-registry
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+```
 
 This configuration will ensure that the policy created in the **ConstraintTemplate** is applied to all Pods in the cluster, ensuring they use images from the allowed registry. Here's a little breakdown of the code : 
 
