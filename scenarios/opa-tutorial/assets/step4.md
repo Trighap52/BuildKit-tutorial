@@ -13,6 +13,8 @@ Now that the policy is in place, let’s test it:
    Error from server (Forbidden): admission webhook "validation.gatekeeper.sh" denied the request: Image docker.io/library/nginx is not from the allowed registry.
    ```
 
+   Gatekeeper essentially acts as **Gandalf** here.
+
 3. **Test with an allowed image**:
    Now try deploying a pod with an image from the allowed registry:
 
