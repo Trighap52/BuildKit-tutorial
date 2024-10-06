@@ -23,8 +23,7 @@
         "text": "assets/step4.md"
       }
     ],
-    "imageid": "ubuntu:20.04",
     "backend": {
-      "imageid": "ubuntu:20.04"
+      "imageid": "ubuntu"
     }
   }
