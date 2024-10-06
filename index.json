@@ -1,0 +1,18 @@
+{
+    "title": "BuildKit for Faster and More Secure Docker Builds",
+    "description": "Learn how to leverage BuildKit to optimize Docker builds for speed and security.",
+    "steps": [
+      {
+        "title": "Introduction",
+        "text": "assets/intro.md"
+      },
+      {
+        "title": "Enable BuildKit",
+        "text": "assets/step1.md"
+      },
+      {
+        "title": "Using Multi-Stage Builds",
+        "text": "assets/step2.md"
+      }
+    ]
+  }
