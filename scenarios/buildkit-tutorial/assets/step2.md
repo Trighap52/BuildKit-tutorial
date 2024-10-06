@@ -41,4 +41,3 @@ If you want BuildKit to be enabled permanently, you can configure Docker's setti
 
 Once BuildKit is enabled, Docker will always use it as the default build system.
 
-Click **Next** to proceed with enabling BuildKit and optimizing your Docker builds!

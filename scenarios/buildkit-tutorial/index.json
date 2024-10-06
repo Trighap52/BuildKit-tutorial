@@ -13,6 +13,18 @@
       {
         "title": "Enabling BuildKit",
         "text": "assets/step2.md"
+      },
+      {
+        "title": "Key Features of BuildKit",
+        "text": "assets/step3.md"
+      },
+      {
+        "title": "Running your first BuildKit build",
+        "text": "assets/step4.md"
       }
-    ]
+    ],
+    "imageid": "docker:20.10",
+    "backend": {
+      "imageid": "docker:20.10" 
+    }
   }
